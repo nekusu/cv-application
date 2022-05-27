@@ -6,3 +6,63 @@
   border-radius: var(--radius);
   font-family: 'Kumbh Sans';
 }
+
+.Editor h3 {
+  margin-left: 6px;
+  margin-bottom: 16px;
+  font-size: 22px;
+}
+
+label {
+  margin-left: 6px;
+  display: block;
+  color: var(--text-color);
+  font-size: 15px;
+}
+
+textarea,
+input {
+  width: 100% !important;
+  margin-top: 6px;
+  padding: 8px 14px;
+  background-color: hsl(0, 0%, 16%);
+  color: var(--text-color);
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-family: 'Poppins';
+  transition: all .3s, transform .2s;
+}
+
+textarea {
+  height: 150px !important;
+  resize: none;
+}
+
+textarea:hover,
+input:hover {
+  background-color: hsl(0, 0%, 17.5%);
+}
+
+textarea:focus,
+input:focus {
+  background-color: hsl(0, 0%, 20%);
+  color: white;
+  box-shadow: var(--shadow);
+}
+
+textarea:active,
+input:active {
+  transform: scale(.975);
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 12px;
+}
+
+.Info .Input:nth-child(3),
+.Info .Input:last-child {
+  grid-column: 1 / 3;
+}
