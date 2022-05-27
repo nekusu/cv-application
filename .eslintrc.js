@@ -20,7 +20,7 @@ module.exports = {
     ],
     "rules": {
         "semi": ["error", "always"],
-        "comma-dangle": ["error", "only-multiline"],
+        "comma-dangle": ["error", "always-multiline"],
         "react/prop-types": [0],
         "react/react-in-jsx-scope": "off",
     },
