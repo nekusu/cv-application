@@ -5,3 +5,12 @@
   outline: none;
   border: none;
 }
+
+:root {
+  --bg-color: hsl(0, 0%, 11%);
+  --accent-color: hsl(160, 50%, 65%);
+  --text-color: hsl(0, 0%, 65%);
+  --dark-text-color: hsl(0, 0%, 18%);
+  --radius: 10px;
+  --shadow: 0 8px 14px rgba(0, 0, 0, 0.1);
+}
