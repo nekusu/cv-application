@@ -1,0 +1,8 @@
+.Editor {
+  max-width: 550px;
+  padding: 25px;
+  background-color: var(--bg-color);
+  color: white;
+  border-radius: var(--radius);
+  font-family: 'Kumbh Sans';
+}
