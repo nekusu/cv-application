@@ -39,7 +39,8 @@
 
 .Editor>.Navigator {
   width: 100%;
-  padding: 25px;
+  padding-inline: 25px;
+  padding-bottom: 25px;
   position: absolute;
   left: 0;
   bottom: 0;
@@ -61,16 +62,17 @@
 }
 
 .Navigator .Dot {
-  width: 5px;
-  height: 5px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background-color: hsl(0, 0%, 40%);
+  cursor: pointer;
   transition: background-color .4s, transform .4s;
 }
 
 .Navigator .Dot.active {
   background-color: var(--accent-color);
-  transform: scale(1.5);
+  transform: scale(1.4);
 }
 
 label {

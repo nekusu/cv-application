@@ -33,6 +33,8 @@ function Navigator(props) {
             <div
               key={`${key}-dot`}
               className={`Dot ${index === i ? 'active' : ''}`}
+              title={items[i].name}
+              onClick={() => setIndex(i)}
             />
           ))}
         </div>
