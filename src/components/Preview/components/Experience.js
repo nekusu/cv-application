@@ -3,7 +3,6 @@ import ExperienceItem from "./ExperienceItem";
 function Experience(props) {
   const { name } = props;
   const propertyName = name.toLowerCase().split(' ')[0];
-  console.log(propertyName);
 
   return (
     <section className={name.replace(/\s/g, '')}>
