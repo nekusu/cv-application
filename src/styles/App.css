@@ -13,6 +13,7 @@
   display: flex;
   gap: 14px;
   align-items: center;
+  justify-content: center;
   background-color: var(--accent-color);
   color: var(--dark-text-color);
   border-radius: var(--radius);
@@ -29,7 +30,6 @@
 }
 
 .Button.alt {
-  justify-content: center;
   background-color: hsl(0, 0%, 14%);
   color: var(--text-color);
 }
@@ -43,4 +43,28 @@
 .Button.alt:active,
 .Button:active {
   transform: scale(0.9);
+}
+
+.Visualizer {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, .8);
+  transition: opacity 0.3s;
+}
+
+.Visualizer.exiting,
+.Visualizer.exited {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.Visualizer img {
+  height: 95vh;
+  border-radius: var(--radius);
 }

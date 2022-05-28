@@ -3,7 +3,7 @@ import Sidebar from "./components/Sidebar";
 import Experience from "./components/Experience";
 import '../../styles/Preview.css';
 
-function Preview({ data }) {
+function Preview({ reference, data }) {
   const {
     info,
     contact,
@@ -14,7 +14,7 @@ function Preview({ data }) {
 
   return (
     <div className="PreviewContainer">
-      <div className="Preview">
+      <div ref={reference} className="Preview">
         <Header info={info} />
         <Sidebar
           contact={contact}
@@ -24,7 +24,7 @@ function Preview({ data }) {
         <main>
           <section className="Profile">
             <h3>PROFILE</h3>
-            <p>{info.profile}</p>
+            {info.profile && <p>{info.profile}</p>}
           </section>
           <Experience name="Work Experience" work={work} />
         </main>
