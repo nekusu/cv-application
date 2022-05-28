@@ -5,3 +5,40 @@
   justify-content: center;
   background-color: black;
 }
+
+.Button {
+  padding: 12px 14px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  background-color: var(--accent-color);
+  color: var(--dark-text-color);
+  border-radius: var(--radius);
+  font-size: 16px;
+  font-family: 'Kumbh Sans';
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+  transition: .2s;
+}
+
+.Button svg {
+  margin-inline: -6px;
+}
+
+.Button.alt {
+  justify-content: center;
+  background-color: hsl(0, 0%, 14%);
+  color: var(--text-color);
+}
+
+.Button.alt:hover {
+  background-color: hsl(0, 0%, 18%);
+  color: var(--accent-color);
+  box-shadow: var(--shadow);
+}
+
+.Button.alt:active,
+.Button:active {
+  transform: scale(0.9);
+}
