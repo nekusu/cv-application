@@ -1,13 +1,16 @@
 .Preview {
-  min-width: 800px;
-  max-width: 800px;
+  min-width: 900px;
+  max-width: 900px;
   display: grid;
+  grid-template-columns: 290px 1fr;
   font-family: 'Work Sans';
 }
 
 header {
   width: 100%;
+  grid-column: 1 / 3;
   background-color: white;
+  color: var(--dark-text-color);
   border-top-left-radius: var(--radius);
   border-top-right-radius: var(--radius);
   text-align: center;
@@ -39,4 +42,37 @@ header h2 {
   font-size: 18px;
   font-weight: 300;
   letter-spacing: 3px;
+}
+
+.Sidebar {
+  padding: 45px 40px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.Contact {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.Contact h3 {
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 5px;
+  margin-bottom: 16px;
+}
+
+.Detail {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  word-break: break-all;
+}
+
+.Detail span,
+.Detail svg {
+  color: white;
 }
