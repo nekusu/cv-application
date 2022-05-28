@@ -43,6 +43,7 @@
     ]
   },
   "devDependencies": {
+    "@faker-js/faker": "^7.1.0",
     "eslint": "^8.16.0",
     "eslint-plugin-react": "^7.30.0"
   }
