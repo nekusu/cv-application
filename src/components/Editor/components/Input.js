@@ -6,19 +6,20 @@ function Input(props) {
     placeholder,
     data,
     handleInput,
-    id = camelCase(label),
+    value = '',
+    id = camelCase(label || ''),
     type = 'text',
   } = props;
 
   return (
     <div className="Input">
-      <label htmlFor={id}>{label}</label>
+      {label && <label htmlFor={id}>{label}</label>}
       {type === 'textarea' ? (
         <textarea
           id={id}
           name={id}
           placeholder={placeholder}
-          value={data?.[id] || ''}
+          value={data?.[id] || value}
           onInput={e => handleInput(id, e.target.value)}
         />
       ) : (
@@ -27,7 +28,7 @@ function Input(props) {
           type={type}
           name={id}
           placeholder={placeholder}
-          value={data?.[id] || ''}
+          value={data?.[id] || value}
           onInput={e => handleInput(id, e.target.value)}
         />
       )}
