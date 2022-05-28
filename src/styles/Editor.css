@@ -1,6 +1,8 @@
 .Editor {
-  max-width: 520px;
+  height: 540px;
+  width: 520px;
   padding: 25px;
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 18px;
@@ -16,6 +18,11 @@
 }
 
 .Editor .Navigator {
+  width: 100%;
+  padding: 25px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
   display: flex;
   justify-content: space-between;
   gap: 8px;
@@ -100,6 +107,8 @@ form {
 }
 
 .Info .Input:nth-child(3),
-.Info .Input:last-child {
+.Info .Input:last-child,
+.Contact .Input:first-child,
+.Contact .Input:nth-child(2) {
   grid-column: 1 / 3;
 }
