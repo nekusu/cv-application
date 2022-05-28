@@ -6,12 +6,13 @@ function Preview({ data }) {
   const {
     info,
     contact,
+    education,
   } = data;
 
   return (
     <div className="Preview">
       <Header info={info} />
-      <Sidebar contact={contact} />
+      <Sidebar contact={contact} education={education} />
     </div>
   );
 }

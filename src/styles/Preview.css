@@ -46,22 +46,25 @@ header h2 {
 
 .Sidebar {
   padding: 45px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
   background-color: var(--bg-color);
   color: var(--text-color);
 }
 
-.Contact {
+section {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 16px;
 }
 
-.Contact h3 {
+section h3 {
+  margin-bottom: 16px;
   color: white;
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: 5px;
-  margin-bottom: 16px;
 }
 
 .Detail {
@@ -75,4 +78,35 @@ header h2 {
 .Detail span,
 .Detail svg {
   color: white;
+}
+
+section.Education h3 {
+  margin-bottom: 12px;
+}
+
+.ExperienceItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.ExperienceItem>* {
+  line-height: 1.65;
+}
+
+.ExperienceItem h4 {
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.ExperienceItem h5 {
+  font-weight: 400;
+}
+
+.ExperienceItem span {
+  display: inline;
+}
+
+.ExperienceItem p {
+  font-size: 14px;
 }
