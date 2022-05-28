@@ -1,6 +1,9 @@
 .Editor {
-  max-width: 550px;
+  max-width: 520px;
   padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
   background-color: var(--bg-color);
   color: white;
   border-radius: var(--radius);
@@ -8,9 +11,43 @@
 }
 
 .Editor h3 {
-  margin-left: 6px;
-  margin-bottom: 16px;
+  margin-left: 4px;
   font-size: 22px;
+}
+
+.Editor .Navigator {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  animation: fadeMoveIn .5s ease forwards;
+}
+
+.Editor .Navigator .Button,
+.Editor .Navigator .Spacer {
+  max-width: 130px;
+  width: 40%;
+}
+
+.Editor .Navigator .Dots {
+  height: 44px;
+  margin-inline: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+
+.Editor .Navigator .Dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: hsl(0, 0%, 40%);
+  transition: background-color .4s, transform .4s;
+}
+
+.Editor .Navigator .Dot.active {
+  background-color: var(--accent-color);
+  transform: scale(1.5);
 }
 
 label {
