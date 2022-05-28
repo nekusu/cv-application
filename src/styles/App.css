@@ -1,15 +1,17 @@
 .App {
   height: 100vh;
+  padding: 25px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
+  gap: 25px;
   background-color: black;
 }
 
 .Button {
-  padding: 12px 14px;
+  padding: 10px 14px;
   display: flex;
-  gap: 16px;
+  gap: 14px;
   align-items: center;
   background-color: var(--accent-color);
   color: var(--dark-text-color);
