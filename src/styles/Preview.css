@@ -4,3 +4,39 @@
   display: grid;
   font-family: 'Work Sans';
 }
+
+header {
+  width: 100%;
+  background-color: white;
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+  text-align: center;
+}
+
+header h1,
+header h2 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header h1 {
+  height: 170px;
+  gap: 40px;
+  font-size: 46px;
+  font-weight: 300;
+  letter-spacing: 14px;
+}
+
+header .firstName {
+  font-weight: 500;
+}
+
+header h2 {
+  height: 50px;
+  background-color: #e7e8ea;
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: 3px;
+}

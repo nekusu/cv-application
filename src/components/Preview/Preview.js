@@ -1,8 +1,15 @@
+import Header from "./components/Header";
 import '../../styles/Preview.css';
 
-function Preview() {
+function Preview({ data }) {
+  const {
+    info,
+  } = data;
+
   return (
-    <div className="Preview"></div>
+    <div className="Preview">
+      <Header info={info} />
+    </div>
   );
 }
 
