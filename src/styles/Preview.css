@@ -1,9 +1,20 @@
 .Preview {
+  min-height: 1250px;
+  max-height: 1250px;
   min-width: 900px;
   max-width: 900px;
   display: grid;
   grid-template-columns: 290px 1fr;
+  grid-template-rows: 220px 1fr;
   font-family: 'Work Sans';
+}
+
+.PreviewContainer {
+  min-width: 940px;
+  height: min(1300px, 100vh);
+  margin-inline: -20px;
+  padding: 25px 20px;
+  overflow-y: auto;
 }
 
 header {
@@ -44,11 +55,15 @@ header h2 {
   letter-spacing: 3px;
 }
 
+main,
 .Sidebar {
   padding: 45px 40px;
   display: flex;
   flex-direction: column;
   gap: 60px;
+}
+
+.Sidebar {
   background-color: var(--bg-color);
   color: var(--text-color);
   border-bottom-left-radius: var(--radius);
@@ -60,20 +75,52 @@ section {
   gap: 14px;
 }
 
+section.Skills {
+  margin: 0;
+}
+
+main h3,
 section h3 {
   margin-bottom: 16px;
-  color: white;
   font-size: 18px;
   font-weight: 400;
   letter-spacing: 5px;
+}
+
+.Sidebar section h3 {
+  color: white;
 }
 
 section.Education h3 {
   margin-bottom: 12px;
 }
 
-section.Skills {
-  margin: 0;
+section p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+main {
+  background-color: white;
+  color: var(--dark-text-color);
+  border-bottom-right-radius: var(--radius);
+}
+
+main section>h3 {
+  position: relative;
+  color: black;
+}
+
+main section>h3::after {
+  content: '';
+  width: 60px;
+  height: 2px;
+  position: absolute;
+  left: 1px;
+  bottom: -16px;
+  display: block;
+  background-color: gray;
+  border-radius: 1px;
 }
 
 .Detail {
@@ -97,19 +144,28 @@ section.Skills {
 .ExperienceItem {
   display: flex;
   flex-direction: column;
+  gap: 2px;
 }
 
 .ExperienceItem>* {
-  line-height: 1.65;
+  line-height: 1.5;
 }
 
 .ExperienceItem h4 {
-  color: white;
   font-size: 15px;
   font-weight: 500;
 }
 
+.Sidebar .ExperienceItem h4 {
+  color: white;
+}
+
+main .ExperienceItem h4 {
+  color: black;
+}
+
 .ExperienceItem h5 {
+  font-size: 14px;
   font-weight: 400;
 }
 
@@ -118,5 +174,5 @@ section.Skills {
 }
 
 .ExperienceItem p {
-  font-size: 14px;
+  font-size: 13px;
 }
