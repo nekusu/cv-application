@@ -1,5 +1,6 @@
+import { useEffect, useState } from 'react';
 import uniqid from 'uniqid';
-import Input from "./Input";
+import Form from "./Form";
 
 const inputFields = [
   {
@@ -23,29 +24,19 @@ const inputFields = [
 inputFields.forEach(field => field.key = uniqid());
 
 function Info({ data, setData }) {
-  const handleInput = (key, value) => {
-    setData({
-      ...data,
-      info: {
-        ...data?.info,
-        [key]: value,
-      },
-    });
-  };
+  const [info, setInfo] = useState({ ...data.info });
+
+  useEffect(() => {
+    setData(prevData => ({ ...prevData, info }));
+  }, [info]);
 
   return (
-    <form className="Info">
-      {inputFields.map(({ label, placeholder, type, key }) => (
-        <Input
-          key={key}
-          label={label}
-          placeholder={placeholder}
-          type={type}
-          data={data.info}
-          handleInput={handleInput}
-        />
-      ))}
-    </form>
+    <Form
+      className="Info"
+      inputFields={inputFields}
+      data={info}
+      setData={setInfo}
+    />
   );
 }
 
