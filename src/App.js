@@ -5,6 +5,7 @@ import uniqid from 'uniqid';
 import Editor from './components/Editor';
 import Preview from './components/Preview';
 import Visualizer from './components/Visualizer';
+import generateData from './utils/generateData';
 import './styles/App.css';
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
       <Editor
         data={data}
         setData={setData}
+        autofill={() => setData(generateData())}
         getImage={getImage}
         toggleVisualizer={toggleVisualizer}
       />

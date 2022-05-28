@@ -7,7 +7,10 @@ import Work from "./components/Work";
 import Skills from "./components/Skills";
 import Navigator from "./components/Navigator";
 import Button from "./components/Button";
-import { RiSaveLine } from 'react-icons/ri';
+import {
+  RiEditLine,
+  RiSaveLine,
+} from 'react-icons/ri';
 import '../../styles/Editor.css';
 
 const editors = [
@@ -23,19 +26,30 @@ function Editor(props) {
   const {
     data,
     setData,
+    autofill,
     getImage,
     toggleVisualizer,
   } = props;
   const [activeEditor, setActiveEditor] = useState(0);
-  const handleClick = () => {
+  const save = () => {
     getImage();
     toggleVisualizer();
   };
+  const autofillButton = (
+    <Button
+      icon={<RiEditLine />}
+      label="Autofill"
+      handleClick={() => {
+        autofill();
+        setActiveEditor(editors.length - 1);
+      }}
+    />
+  );
   const saveButton = (
     <Button
       icon={<RiSaveLine />}
       label="Save"
-      handleClick={handleClick}
+      handleClick={save}
     />
   );
   let editor;
@@ -66,6 +80,7 @@ function Editor(props) {
         index={activeEditor}
         setIndex={setActiveEditor}
         items={editors}
+        firstButton={autofillButton}
         lastButton={saveButton}
       />
     </div>
