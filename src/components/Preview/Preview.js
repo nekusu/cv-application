@@ -7,12 +7,17 @@ function Preview({ data }) {
     info,
     contact,
     education,
+    skills,
   } = data;
 
   return (
     <div className="Preview">
       <Header info={info} />
-      <Sidebar contact={contact} education={education} />
+      <Sidebar
+        contact={contact}
+        education={education}
+        skills={skills}
+      />
     </div>
   );
 }
