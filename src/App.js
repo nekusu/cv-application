@@ -4,13 +4,11 @@ import Editor from './components/Editor';
 import './styles/App.css';
 
 function App() {
+  const createItems = count => Array(count).fill().map(() => ({ key: uniqid() }));
   const [data, setData] = useState({
-    education: [{
-      key: uniqid(),
-    }],
-    work: [{
-      key: uniqid(),
-    }],
+    education: createItems(1),
+    work: createItems(1),
+    skills: createItems(3),
   });
 
   return (

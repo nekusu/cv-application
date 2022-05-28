@@ -17,6 +17,13 @@
   font-size: 22px;
 }
 
+.Editor .Container {
+  margin-inline: -25px;
+  padding-inline: 25px;
+  height: 386px;
+  overflow-y: auto;
+}
+
 .Editor .Navigator {
   display: flex;
   justify-content: space-between;
@@ -45,7 +52,7 @@
 }
 
 .Navigator .Dots {
-  height: 44px;
+  height: 40px;
   margin-inline: 8px;
   display: flex;
   align-items: center;
@@ -64,14 +71,6 @@
 .Navigator .Dot.active {
   background-color: var(--accent-color);
   transform: scale(1.5);
-}
-
-.Button.Delete {
-  width: 40px;
-  margin: 25px;
-  position: absolute;
-  top: 0;
-  right: 0;
 }
 
 label {
@@ -121,6 +120,36 @@ form {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 14px 12px;
+}
+
+.Container>.Button.Delete,
+.Container>.Button.New {
+  height: 40px;
+  width: 40px;
+  margin: 25px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.Container>.Button.New {
+  width: 96px;
+}
+
+.Skills {
+  margin-top: 10px;
+  grid-template-columns: 1fr;
+  row-gap: 16px;
+}
+
+.Skills input {
+  margin: 0;
+}
+
+.Skill {
+  display: grid;
+  grid-template-columns: 1fr 40px;
+  gap: 12px;
 }
 
 .Info .Input:nth-child(3),

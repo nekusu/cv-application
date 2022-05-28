@@ -4,6 +4,7 @@ import Info from "./components/Info";
 import Contact from "./components/Contact";
 import Education from "./components/Education";
 import Work from "./components/Work";
+import Skills from "./components/Skills";
 import Navigator from "./components/Navigator";
 import '../../styles/Editor.css';
 
@@ -12,24 +13,28 @@ const editors = [
   { name: 'Contact' },
   { name: 'Education' },
   { name: 'Work' },
+  { name: 'Skills' },
 ];
 editors.forEach(editor => editor.key = uniqid());
 
-function Editor({ data, setData }) {
+function Editor(props) {
   const [activeEditor, setActiveEditor] = useState(0);
   let editor;
   switch (editors[activeEditor].name) {
     case 'Info':
-      editor = <Info data={data} setData={setData} />;
+      editor = <Info {...props} />;
       break;
     case 'Contact':
-      editor = <Contact data={data} setData={setData} />;
+      editor = <Contact {...props} />;
       break;
     case 'Education':
-      editor = <Education data={data} setData={setData} />;
+      editor = <Education {...props} />;
       break;
     case 'Work':
-      editor = <Work data={data} setData={setData} />;
+      editor = <Work {...props} />;
+      break;
+    case 'Skills':
+      editor = <Skills {...props} />;
       break;
   }
 
