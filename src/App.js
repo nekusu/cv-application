@@ -1,10 +1,10 @@
 import { createRef, useState } from 'react';
 import { useTransition } from 'react-transition-state';
 import { useScreenshot } from 'use-react-screenshot';
+import { saveAs } from 'file-saver';
 import uniqid from 'uniqid';
 import Editor from './components/Editor';
 import Preview from './components/Preview';
-import Visualizer from './components/Visualizer';
 import generateData from './utils/generateData';
 import './styles/App.css';
 
@@ -21,13 +21,12 @@ function App() {
   });
   const screenshotRef = createRef(null);
   const transformRef = createRef(null);
-  const [image, takeScreenshot] = useScreenshot({ type: "image/png", quality: 1.0 });
+  const [, takeScreenshot] = useScreenshot({ type: "image/png", quality: 1.0 });
+  const [previewState, togglePreview] = useTransition({ timeout: 300 });
   const getImage = () => {
     transformRef.current?.centerView(1, 0);
-    takeScreenshot(screenshotRef.current);
+    takeScreenshot(screenshotRef.current).then(saveAs);
   };
-  const [previewState, togglePreview] = useTransition({ timeout: 300 });
-  const [visualizerState, toggleVisualizer] = useTransition({ timeout: 300 });
 
   return (
     <div className="App">
@@ -36,7 +35,6 @@ function App() {
         setData={setData}
         autofill={() => setData(generateData())}
         getImage={getImage}
-        toggleVisualizer={toggleVisualizer}
         togglePreview={togglePreview}
       />
       <Preview
@@ -44,11 +42,6 @@ function App() {
         screenshotRef={screenshotRef}
         transformRef={transformRef}
         state={previewState}
-      />
-      <Visualizer
-        state={visualizerState}
-        image={image}
-        toggleVisualizer={toggleVisualizer}
       />
     </div>
   );

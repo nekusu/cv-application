@@ -30,15 +30,10 @@ function Editor(props) {
     setData,
     autofill,
     getImage,
-    toggleVisualizer,
     togglePreview,
   } = props;
   const [activeEditor, setActiveEditor] = useState(0);
   const [isPreviewVisible, togglePreviewVisible] = useState(false);
-  const save = () => {
-    getImage();
-    toggleVisualizer();
-  };
   const autofillButton = (
     <Button
       icon={<RiEditLine />}
@@ -53,7 +48,7 @@ function Editor(props) {
     <Button
       icon={<RiSaveLine />}
       label="Save"
-      handleClick={save}
+      handleClick={getImage}
     />
   );
   let editor;
