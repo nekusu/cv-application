@@ -8,7 +8,7 @@
 }
 
 .PreviewContainer {
-  height: 100vh;
+  height: 100vh !important;
   max-width: 55vw;
   min-width: 55vw;
 }
@@ -187,7 +187,7 @@ main .ExperienceItem h4 {
   .PreviewContainer {
     min-width: 100vw;
     max-width: 100vw;
-    position: fixed;
+    position: fixed !important;
     bottom: 0;
     background-color: black;
     transition: opacity .3s;
@@ -200,6 +200,6 @@ main .ExperienceItem h4 {
   }
 
   .PreviewContent {
-    padding: 20px;
+    padding: 20px !important;
   }
 }

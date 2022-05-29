@@ -65,6 +65,7 @@ function Experience(props) {
         <Button
           className="Delete"
           icon={<RiDeleteBin6Line />}
+          title="Delete"
           handleClick={deleteItem}
           alt
         />
