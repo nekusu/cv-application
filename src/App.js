@@ -19,10 +19,15 @@ function App() {
     work: createItems(1),
     skills: createItems(3),
   });
-  const ref = createRef(null);
+  const screenshotRef = createRef(null);
+  const transformRef = createRef(null);
   const [image, takeScreenshot] = useScreenshot({ type: "image/png", quality: 1.0 });
-  const getImage = () => takeScreenshot(ref.current);
-  const [transitionState, toggleVisualizer] = useTransition({ timeout: 300 });
+  const getImage = () => {
+    transformRef.current?.centerView(1, 0);
+    takeScreenshot(screenshotRef.current);
+  };
+  const [previewState, togglePreview] = useTransition({ timeout: 300 });
+  const [visualizerState, toggleVisualizer] = useTransition({ timeout: 300 });
 
   return (
     <div className="App">
@@ -32,13 +37,16 @@ function App() {
         autofill={() => setData(generateData())}
         getImage={getImage}
         toggleVisualizer={toggleVisualizer}
+        togglePreview={togglePreview}
       />
       <Preview
         data={data}
-        reference={ref}
+        screenshotRef={screenshotRef}
+        transformRef={transformRef}
+        state={previewState}
       />
       <Visualizer
-        state={transitionState}
+        state={visualizerState}
         image={image}
         toggleVisualizer={toggleVisualizer}
       />

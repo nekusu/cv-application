@@ -1,10 +1,10 @@
 .App {
-  height: 100vh;
-  padding: 25px;
+  min-height: 100vh;
+  padding-inline: 20px;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  gap: 25px;
+  justify-content: center;
+  gap: 20px;
   background-color: black;
 }
 
@@ -67,4 +67,5 @@
 .Visualizer img {
   height: 95vh;
   border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }

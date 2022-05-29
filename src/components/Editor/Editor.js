@@ -10,6 +10,8 @@ import Button from "./components/Button";
 import {
   RiEditLine,
   RiSaveLine,
+  RiEyeLine,
+  RiEditBoxLine,
 } from 'react-icons/ri';
 import '../../styles/Editor.css';
 
@@ -29,8 +31,10 @@ function Editor(props) {
     autofill,
     getImage,
     toggleVisualizer,
+    togglePreview,
   } = props;
   const [activeEditor, setActiveEditor] = useState(0);
+  const [isPreviewVisible, togglePreviewVisible] = useState(false);
   const save = () => {
     getImage();
     toggleVisualizer();
@@ -82,6 +86,16 @@ function Editor(props) {
         items={editors}
         firstButton={autofillButton}
         lastButton={saveButton}
+      />
+      <Button
+        className="PreviewButton"
+        icon={isPreviewVisible ? <RiEditBoxLine /> : <RiEyeLine />}
+        label={isPreviewVisible ? 'Editor' : 'Preview'}
+        handleClick={() => {
+          togglePreviewVisible(prevState => !prevState);
+          togglePreview();
+        }}
+        alt
       />
     </div>
   );

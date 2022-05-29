@@ -1,8 +1,6 @@
 .Preview {
-  min-height: 1250px;
-  max-height: 1250px;
-  min-width: 900px;
-  max-width: 900px;
+  height: 1250px;
+  width: 900px;
   display: grid;
   grid-template-columns: 290px 1fr;
   grid-template-rows: 220px 1fr;
@@ -10,11 +8,13 @@
 }
 
 .PreviewContainer {
-  min-width: 940px;
-  height: min(1300px, 100vh);
-  margin-inline: -20px;
-  padding: 25px 20px;
-  overflow-y: auto;
+  height: 100vh;
+  max-width: 55vw;
+  min-width: 55vw;
+}
+
+.PreviewContent {
+  padding-block: 20px;
 }
 
 header {
@@ -181,4 +181,25 @@ main .ExperienceItem h4 {
 
 .ExperienceItem p {
   font-size: 13px;
+}
+
+@media (max-width: 1000px) {
+  .PreviewContainer {
+    min-width: 100vw;
+    max-width: 100vw;
+    position: fixed;
+    bottom: 0;
+    background-color: black;
+    transition: opacity .3s;
+  }
+
+  .PreviewContainer.exiting,
+  .PreviewContainer.exited {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .PreviewContent {
+    padding: 20px;
+  }
 }

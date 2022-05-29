@@ -1,7 +1,9 @@
 .Editor {
   height: 540px;
   width: 520px;
+  margin-block: 20px;
   padding: 25px;
+  padding-bottom: 80px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -20,7 +22,6 @@
 .Editor .Container {
   margin-inline: -25px;
   padding-inline: 25px;
-  height: 386px;
   overflow-y: auto;
 }
 
@@ -73,6 +74,17 @@
 .Navigator .Dot.active {
   background-color: var(--accent-color);
   transform: scale(1.4);
+}
+
+.Editor .PreviewButton {
+  width: 130px;
+  margin-bottom: 20px;
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: calc(50% - 65px);
+  z-index: 2;
+  box-shadow: var(--shadow);
 }
 
 label {
@@ -164,4 +176,24 @@ form {
 
 .Work textarea {
   height: 84px !important;
+}
+
+@media (max-width: 1000px) {
+  .Editor {
+    margin-bottom: 75px;
+  }
+
+  .Editor .PreviewButton {
+    display: flex;
+  }
+}
+
+@media (max-width: 440px) {
+  .Editor>.Navigator .Dots {
+    display: none;
+  }
+
+  .Editor>.Navigator .Button {
+    width: 100%;
+  }
 }
