@@ -7,6 +7,7 @@ import Work from "./components/Work";
 import Skills from "./components/Skills";
 import Navigator from "./components/Navigator";
 import Button from "./components/Button";
+import GithubButton from "./components/GithubButton";
 import {
   RiEditLine,
   RiSaveLine,
@@ -82,16 +83,19 @@ function Editor(props) {
         firstButton={autofillButton}
         lastButton={saveButton}
       />
-      <Button
-        className="PreviewButton"
-        icon={isPreviewVisible ? <RiEditBoxLine /> : <RiEyeLine />}
-        label={isPreviewVisible ? 'Editor' : 'Preview'}
-        handleClick={() => {
-          togglePreviewVisible(prevState => !prevState);
-          togglePreview();
-        }}
-        alt
-      />
+      <div className="Buttons">
+        <GithubButton username="nekusu" />
+        <Button
+          className="PreviewButton"
+          icon={isPreviewVisible ? <RiEditBoxLine /> : <RiEyeLine />}
+          label={isPreviewVisible ? 'Editor' : 'Preview'}
+          handleClick={() => {
+            togglePreviewVisible(prevState => !prevState);
+            togglePreview();
+          }}
+          alt
+        />
+      </div>
     </div>
   );
 }

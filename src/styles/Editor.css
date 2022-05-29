@@ -2,6 +2,7 @@
   height: 540px;
   width: 520px;
   margin-block: 20px;
+  margin-bottom: 80px;
   padding: 25px;
   padding-bottom: 80px;
   position: relative;
@@ -76,15 +77,26 @@
   transform: scale(1.4);
 }
 
+.Editor .Buttons {
+  width: 270px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  position: absolute;
+  bottom: -60px;
+  left: calc(50% - 135px);
+  z-index: 2;
+}
+
+.Editor .GithubButton,
 .Editor .PreviewButton {
   width: 130px;
-  margin-bottom: 20px;
-  display: none;
-  position: fixed;
-  bottom: 0;
-  left: calc(50% - 65px);
-  z-index: 2;
   box-shadow: var(--shadow);
+  text-decoration: none;
+}
+
+.Editor .PreviewButton {
+  display: none;
 }
 
 label {
@@ -179,8 +191,9 @@ form {
 }
 
 @media (max-width: 1000px) {
-  .Editor {
-    margin-bottom: 75px;
+  .Editor .Buttons {
+    position: fixed;
+    bottom: 20px;
   }
 
   .Editor .PreviewButton {
