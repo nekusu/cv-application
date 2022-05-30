@@ -77,26 +77,22 @@
   transform: scale(1.4);
 }
 
-.Editor .Buttons {
-  width: 270px;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  position: absolute;
-  bottom: -60px;
-  left: calc(50% - 135px);
-  z-index: 2;
-}
-
-.Editor .GithubButton,
-.Editor .PreviewButton {
+.Editor .GithubButton {
   width: 130px;
-  box-shadow: var(--shadow);
+  position: absolute;
+  left: calc(50% - 65px);
+  bottom: -60px;
   text-decoration: none;
 }
 
 .Editor .PreviewButton {
+  width: 130px;
+  position: fixed;
+  bottom: 20px;
+  left: calc(50% - 65px);
+  z-index: 2;
   display: none;
+  box-shadow: var(--shadow);
 }
 
 label {
@@ -191,11 +187,6 @@ form {
 }
 
 @media (max-width: 1000px) {
-  .Editor .Buttons {
-    position: fixed;
-    bottom: 20px;
-  }
-
   .Editor .PreviewButton {
     display: flex;
   }

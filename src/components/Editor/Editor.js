@@ -83,18 +83,16 @@ function Editor(props) {
         firstButton={autofillButton}
         lastButton={saveButton}
       />
-      <div className="Buttons">
-        <GithubButton username="nekusu" />
-        <Button
-          className="PreviewButton"
-          icon={isPreviewVisible ? <RiCodeLine /> : <RiEyeLine />}
-          label={isPreviewVisible ? 'Editor' : 'Preview'}
-          handleClick={() => {
-            togglePreviewVisible(prevState => !prevState);
-            togglePreview();
-          }}
-        />
-      </div>
+      <GithubButton username="nekusu" />
+      <Button
+        className="PreviewButton"
+        icon={isPreviewVisible ? <RiCodeLine /> : <RiEyeLine />}
+        label={isPreviewVisible ? 'Editor' : 'Preview'}
+        handleClick={() => {
+          togglePreviewVisible(prevState => !prevState);
+          togglePreview();
+        }}
+      />
     </div>
   );
 }
