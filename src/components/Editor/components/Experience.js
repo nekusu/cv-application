@@ -2,7 +2,7 @@ import { useState } from 'react';
 import uniqid from 'uniqid';
 import Form from './Form';
 import Navigator from './Navigator';
-import Button from './Button';
+import Button from '../../Button';
 import {
   RiAddLine,
   RiDeleteBin6Line,

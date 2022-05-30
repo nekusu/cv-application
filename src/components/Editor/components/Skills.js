@@ -1,6 +1,6 @@
 import uniqid from 'uniqid';
 import Input from './Input';
-import Button from './Button';
+import Button from '../../Button';
 import {
   RiAddLine,
   RiDeleteBin6Line,

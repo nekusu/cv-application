@@ -1,8 +1,8 @@
+import Button from '../../Button';
 import {
   RiArrowLeftSLine,
   RiArrowRightSLine,
 } from 'react-icons/ri';
-import Button from './Button';
 
 function Navigator(props) {
   const {
