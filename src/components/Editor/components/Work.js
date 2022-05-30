@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import uniqid from 'uniqid';
 import Experience from "./Experience";
 
@@ -28,18 +27,16 @@ const inputFields = [
 inputFields.forEach(field => field.key = uniqid());
 
 function Work({ data, setData }) {
-  const [work, setWork] = useState([...data.work]);
-
-  useEffect(() => {
-    setData(prevData => ({ ...prevData, work }));
-  }, [work]);
+  const setItems = (items) => {
+    setData(({ ...data, work: items }));
+  };
 
   return (
     <Experience
       className="Work"
-      items={data.work}
-      setItems={setWork}
       inputFields={inputFields}
+      items={data.work}
+      setItems={setItems}
     />
   );
 }

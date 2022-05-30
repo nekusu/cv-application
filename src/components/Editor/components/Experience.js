@@ -1,9 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import uniqid from 'uniqid';
 import Form from './Form';
 import Navigator from './Navigator';
 import Button from './Button';
-import clamp from '../../../utils/clamp';
 import {
   RiAddLine,
   RiDeleteBin6Line,
@@ -17,27 +16,24 @@ function Experience(props) {
     inputFields,
   } = props;
   const [index, setIndex] = useState(0);
-  const [item, setItem] = useState({ ...items[index] });
   const createItem = () => {
-    setItems(prevItems => {
-      prevItems.push({ key: uniqid() });
-      return prevItems;
-    });
-    setIndex(prevIndex => prevIndex + 1);
+    const newItems = [...items];
+    newItems.push({ key: uniqid() });
+    setIndex(index + 1);
+    setItems(newItems);
   };
   const deleteItem = () => {
-    const newIndex = index !== 0 ? clamp(0, index + 1, items.length - 2) : index;
-
-    setItems(prevItems => {
-      prevItems.splice(index, 1);
-      return prevItems;
-    });
-
-    if (index === newIndex) {
-      setItem({ ...items[index] });
-    } else {
-      setIndex(newIndex);
+    const newItems = [...items];
+    newItems.splice(index, 1);
+    if (index === newItems.length) {
+      setIndex(index - 1);
     }
+    setItems(newItems);
+  };
+  const handleInput = (key, value) => {
+    const newItems = [...items];
+    newItems[index][key] = value;
+    setItems(newItems);
   };
   const newButton = (
     <Button
@@ -47,17 +43,6 @@ function Experience(props) {
       alt
     />
   );
-
-  useEffect(() => {
-    setItem({ ...items[index] });
-  }, [index]);
-  useEffect(() => {
-    setItems(prevItems => {
-      const newData = [...prevItems];
-      newData[index] = item;
-      return newData;
-    });
-  }, [item]);
 
   return (
     <div className="Container">
@@ -74,7 +59,7 @@ function Experience(props) {
         className={className}
         inputFields={inputFields}
         data={items[index]}
-        setData={setItem}
+        handleInput={handleInput}
       />
       <Navigator
         index={index}

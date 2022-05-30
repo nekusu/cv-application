@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import uniqid from 'uniqid';
 import Experience from "./Experience";
 
@@ -23,18 +22,16 @@ const inputFields = [
 inputFields.forEach(field => field.key = uniqid());
 
 function Education({ data, setData }) {
-  const [education, setEducation] = useState([...data.education]);
-
-  useEffect(() => {
-    setData(prevData => ({ ...prevData, education }));
-  }, [education]);
+  const setItems = (items) => {
+    setData(({ ...data, education: items }));
+  };
 
   return (
     <Experience
       className="Education"
-      items={data.education}
-      setItems={setEducation}
       inputFields={inputFields}
+      items={data.education}
+      setItems={setItems}
     />
   );
 }

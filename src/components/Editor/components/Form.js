@@ -5,14 +5,8 @@ function Form(props) {
     className,
     inputFields,
     data,
-    setData,
+    handleInput,
   } = props;
-  const handleInput = (key, value) => {
-    setData(prevData => ({
-      ...prevData,
-      [key]: value,
-    }));
-  };
 
   return (
     <form className={className}>
