@@ -1,5 +1,6 @@
 import { useWindowSize } from "@react-hook/window-size";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
+import Zoom from "./components/Zoom";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import Experience from "./components/Experience";
@@ -33,35 +34,38 @@ function Preview({ data, screenshotRef, transformRef, state }) {
   transformRef.current?.centerView(scale, 0);
 
   return (
-    <TransformWrapper
-      ref={transformRef}
-      minScale={0.4}
-      maxScale={1.5}
-      initialScale={scale}
-      wheel={{ step: 0.1 }}
-      centerOnInit
-    >
-      <TransformComponent
-        wrapperClass={`PreviewContainer ${state}`}
-        contentClass="PreviewContent"
+    <div className={`Preview ${state}`}>
+      <Zoom transformRef={transformRef} />
+      <TransformWrapper
+        ref={transformRef}
+        minScale={0.4}
+        maxScale={1.5}
+        initialScale={scale}
+        wheel={{ step: 0.1 }}
+        centerOnInit
       >
-        <div ref={screenshotRef} className="Preview">
-          <Header info={info} />
-          <Sidebar
-            contact={contact}
-            education={education}
-            skills={skills}
-          />
-          <main>
-            <section className="Profile">
-              <h3>PROFILE</h3>
-              {info.profile && <p>{info.profile}</p>}
-            </section>
-            <Experience name="Work Experience" work={work} />
-          </main>
-        </div>
-      </TransformComponent>
-    </TransformWrapper>
+        <TransformComponent
+          wrapperClass={`PreviewContainer`}
+          contentClass="PreviewContent"
+        >
+          <div ref={screenshotRef} className="Resume">
+            <Header info={info} />
+            <Sidebar
+              contact={contact}
+              education={education}
+              skills={skills}
+            />
+            <main>
+              <section className="Profile">
+                <h3>PROFILE</h3>
+                {info.profile && <p>{info.profile}</p>}
+              </section>
+              <Experience name="Work Experience" work={work} />
+            </main>
+          </div>
+        </TransformComponent>
+      </TransformWrapper>
+    </div>
   );
 }
 
