@@ -12,7 +12,7 @@ import {
   RiEditLine,
   RiSaveLine,
   RiEyeLine,
-  RiEditBoxLine,
+  RiCodeLine,
 } from 'react-icons/ri';
 import '../../styles/Editor.css';
 
@@ -87,13 +87,12 @@ function Editor(props) {
         <GithubButton username="nekusu" />
         <Button
           className="PreviewButton"
-          icon={isPreviewVisible ? <RiEditBoxLine /> : <RiEyeLine />}
+          icon={isPreviewVisible ? <RiCodeLine /> : <RiEyeLine />}
           label={isPreviewVisible ? 'Editor' : 'Preview'}
           handleClick={() => {
             togglePreviewVisible(prevState => !prevState);
             togglePreview();
           }}
-          alt
         />
       </div>
     </div>
