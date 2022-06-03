@@ -1,20 +1,18 @@
 # CV Application
-
 CV Application for [The Odin Project](https://www.theodinproject.com/).
 
-## Built with
+## Demo
+🌑 [Live Demo](https://nekusu.github.io/cv-application/)
 
-* HTML5
-* CSS
-* JavaScript
+## Built with
 * React
-* ESLint
+* CSS
 
 ## Features
-
-* Good UI/UX.
 * Mobile gestures.
+* Nice UI/UX.
 * Responsive design.
 * Save resume as image.
 
-You can visit the finished website [here](https://nekusu.github.io/cv-application/).
+## Screenshots
+![](/screenshots/screenshot-0.png)
